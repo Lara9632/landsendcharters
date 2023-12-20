@@ -8,55 +8,167 @@ export const siteConfig = {
 			label: "Home",
 			href: "/",
 		},
-    {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
-    }
+		{
+			label: "About Us",
+			href: "/about",
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
+		},
+		{
+			label: "Our Fleet",
+			href: "/docs",
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
+		},
+		{
+			label: "Fishing Report",
+			href: null,
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
+		},
+		{
+			label: "Cabo San Lucas Fishing chart",
+			href: null,
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
+		},
+		{
+			label: "Contact Us",
+			href: "/contact-us",
+		},
+		{
+			label: "FAQ",
+			href: "/contact-us",
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
+		},
+		{
+			label: "Blog",
+			href: "/blog",
+		},
 	],
 	navMenuItems: [
 		{
-			label: "Profile",
-			href: "/profile",
+			label: "Home",
+			href: "/",
 		},
 		{
-			label: "Dashboard",
-			href: "/dashboard",
+			label: "About Us",
+			href: "/about",
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
 		},
 		{
-			label: "Projects",
-			href: "/projects",
+			label: "Our Fleet",
+			href: "/docs",
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
 		},
 		{
-			label: "Team",
-			href: "/team",
+			label: "Fishing Report",
+			href: null,
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
 		},
 		{
-			label: "Calendar",
-			href: "/calendar",
+			label: "Cabo San Lucas Fishing chart",
+			href: null,
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
 		},
 		{
-			label: "Settings",
-			href: "/settings",
+			label: "Contact Us",
+			href: "/contact-us",
 		},
 		{
-			label: "Help & Feedback",
-			href: "/help-feedback",
+			label: "FAQ",
+			href: "/contact-us",
+			subItems: [
+				{
+					label: "Yachts",
+					href: "/",
+				},
+				{
+					label: "Fishing charters",
+					href: "/",
+				},
+			],
 		},
 		{
-			label: "Logout",
-			href: "/logout",
+			label: "Blog",
+			href: "/blog",
 		},
 	],
 	links: {
@@ -64,6 +176,6 @@ export const siteConfig = {
 		twitter: "https://twitter.com/getnextui",
 		docs: "https://nextui.org",
 		discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev"
+		sponsor: "https://patreon.com/jrgarciadev"
 	},
 };
