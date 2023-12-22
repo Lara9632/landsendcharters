@@ -1,46 +1,36 @@
 'use client'
 import React from "react";
+import { useState } from "react";
+import { Bars3Icon } from '@heroicons/react/24/solid'
 import {
 	Navbar as NextUINavbar, NavbarContent, NavbarMenu, NavbarMenuToggle, NavbarBrand, NavbarItem, NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu } from "@nextui-org/react";
 import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from "./jsx-icons";
 import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
-import { dropdownMenu, link as linkStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { TwitterIcon, GithubIcon, SearchIcon, } from "@/components/icons";
-import { Logo } from "@/components/icons";
 import Image from "next/image";
 import { saira } from "@/config/fonts";
 
+
 export const Navbar = () => {
-	// const searchInput = (
-	// 	<Input
-	// 		aria-label="Search"
-	// 		classNames={{
-	// 			inputWrapper: "bg-default-100",
-	// 			input: ",
-	// 		}}
-	// 		endContent={
-	// 			<Kbd className="hidden lg:inline-block" keys={["command"]}>
-	// 				K
-	// 			</Kbd>
-	// 		}
-	// 		labelPlacement="outside"
-	// 		placeholder="Search..."
-	// 		startContent={
-	// 			<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-	// 		}
-	// 		type="search"
-	// 	/>
-	// );
-	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>({});
+
+  const handleMouseEnter = (itemId: string) => {
+    setDropdownStates(prev => ({ ...prev, [itemId]: true }));
+  };
+
+  const handleMouseLeave = (itemId: string) => {
+    setDropdownStates(prev => ({ ...prev, [itemId]: false }));
+  };
 	const icons = {
 		chevron: <ChevronDown fill="currentColor" size={16} height={undefined} width={undefined} />,
 		scale: <Scale className="text-warning" fill="currentColor" size={30} height={undefined} width={undefined} />,
@@ -51,45 +41,47 @@ export const Navbar = () => {
 		user: <TagUser className="text-danger" fill="currentColor" size={30} height={undefined} width={undefined} />,
 	};
 
-	// const menuItems = [
-	// 	"Profile",
-	// 	"Dashboard",
-	// 	"Activity",
-	// 	"Analytics",
-	// 	"System",
-	// 	"Deployments",
-	// 	"My Settings",
-	// 	"Team Settings",
-	// 	"Help & Feedback",
-	// 	"Log Out",
-	// ];
-
 	return (
-		<NextUINavbar maxWidth="xl" position="sticky" height={'auto'} onMenuOpenChange={setIsMenuOpen} className={`${saira.className} antialiased text-2xl font-semibold`} style={{color: "#111D56"}} classNames={
+		<NextUINavbar position="sticky" height={'auto'} isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} className={`${saira.className} antialiased text-2xl font-semibold container mx-auto`} style={{color: "#111D56"}} 
+		classNames={
 			{
 				wrapper: `justify-normal px-2`,
 				content: "justify-between",
-				item: "item-classes",
+				item: [
+          "flex",
+          "relative",
+          "h-full",
+          "items-center",
+          "data-[active=true]:after:content-['']",
+          "data-[active=true]:after:absolute",
+          "data-[active=true]:after:bottom-0",
+          "data-[active=true]:after:left-0",
+          "data-[active=true]:after:right-0",
+          "data-[active=true]:after:h-[2px]",
+          "data-[active=true]:after:rounded-[2px]",
+          "data-[active=true]:after:bg-primary",
+        ],
+        toggleIcon: "w-6 h-6 text-black-500 absolute"
 
 			}
 		}>
 			<NavbarContent justify="start" style={{ maxWidth: 'fit-content' }}>
-				<NavbarBrand as="li" className="gap-3 p-3">
+				<NavbarBrand as="li" className="gap-3 py-3 pl-3">
 					<NextLink className="flex justify-start items-center" href="/">
-						<Image src='/Logo-lands-end-charters.webp' width={105} height={123} alt='logo' className="w-20 md:w-28" />
+						<Image src='/Logo-lands-end-charters.webp' width={105} height={123} alt='logo' className="w-20 md:w-[105px]" />
 					</NextLink>
 				</NavbarBrand>
 			</NavbarContent>
 
-			<div className="flex flex-col basis-4/5 gap-3">
+			<div className="hidden lg:flex flex-col gap-3 w-4/5">
 				<NavbarContent className="hidden sm:flex ml-2" style={{ justifyContent: 'space-between', gap: '2rem' }}>
 
-					<NavbarItem className="hidden md:flex gap-2 items-center text-lg">
+					<NavbarItem className="gap-2 items-center text-lg">
 						<NextLink className="flex items-center gap-2" href="tel:8002815778">
 							LANDS END CHARTERS 1-800-281-5778
 						</NextLink>
 					</NavbarItem>
-					<NavbarItem className="hidden md:flex gap-2 items-center">
+					<NavbarItem className="gap-2 items-center">
 						{/* <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
 							<FacebookIcon className="text-default-500" />
 						</Link> */}
@@ -102,43 +94,43 @@ export const Navbar = () => {
 						{/* <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
 							<InstagramIcon className="text-default-500" />
 						</Link> */}
-						<ThemeSwitch />
+						{/* <ThemeSwitch /> */}
 					</NavbarItem>
 				</NavbarContent>
 				<NavbarContent
-					className="hidden sm:flex basis-1/5 "
+					className="hidden sm:flex basis-4/5"
 					justify="start"
 				>
-					<ul className="hidden md:flex gap-4 justify-between ml-2 items-center">
+					<ul className="hidden lg:flex gap-3 justify-between ml-2 items-center">
 						{siteConfig.navItems.map((item) => (
 							(item?.subItems) ?
-								<Dropdown key={item.href}>
+								<Dropdown key={item.href} isOpen={dropdownStates[item.label]}>
 									<NavbarItem>
-										<DropdownTrigger>
+										<DropdownTrigger >
 											<Button
-												disableRipple
-												className={`p-0 bg-transparent data-[hover=true]:bg-transparent uppercase text-2xl font-semibold ${saira.className} antialiased `}
+												className={`p-0 bg-transparent data-[hover=true]:bg-transparent uppercase text-2xl font-semibold ${saira.className} antialiased gap-0 min-w-0`}
 												endContent={icons.chevron}
-												style={{color: "#111D56"}}
+												style={{color: "#111D56", fontSize : '22.5px'}}
 												radius="sm"
 												variant="light"
+												onMouseEnter={() => handleMouseEnter(item.label)}
+                        onMouseLeave={() => handleMouseLeave(item.label)}
 											>
 												{item.label}
 											</Button>
 										</DropdownTrigger>
 									</NavbarItem>
 									<DropdownMenu
-										className="w-[340px]"
+										className="w-[200px]"
 										itemClasses={{
 											base: "gap-4",
 										}}
+                    aria-label="Dynamic Actions" items={siteConfig.navItems}
 									>
 										{item.subItems.map((subItem) => (
 											<DropdownItem
 												key={subItem.label}
-												description="ACME scales apps to meet user demand, automagically, based on load. "
-												startContent={icons.scale}
-										style={{ fontSize : '22.5px' }}
+												style={{ fontSize : '22.5px' }}
 											>
 												{subItem.label}
 											</DropdownItem>
@@ -163,10 +155,9 @@ export const Navbar = () => {
 				</NavbarContent>
 			</div>
 
-			<NavbarContent className="md:hidden basis-1 pl-4" justify="end">
-				<ThemeSwitch />
-				<NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-					className="sm:hidden" />
+			<NavbarContent className="flex lg:hidden pl-4" justify="end">
+				{/* <ThemeSwitch /> */}
+				<NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} icon={<Bars3Icon/>} />
 			</NavbarContent>
 
 			<NavbarMenu>
