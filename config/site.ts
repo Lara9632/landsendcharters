@@ -1,7 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
+
 export const siteConfig = {
-	name: "Next.js + NextUI",
+	name: "Lands End Charters",
 	description: "Make beautiful websites regardless of your design experience.",
 	navItems: [
 		{
@@ -13,12 +14,12 @@ export const siteConfig = {
 			href: "/about",
 			subItems: [
 				{
-					label: "Yachts",
-					href: "/",
+					label: "Team",
+					href: "/team",
 				},
 				{
-					label: "Fishing charters",
-					href: "/",
+					label: "Reviews",
+					href: "/reviews",
 				},
 			],
 		},
@@ -28,11 +29,11 @@ export const siteConfig = {
 			subItems: [
 				{
 					label: "Yachts",
-					href: "/",
+					href: "/yachts",
 				},
 				{
 					label: "Fishing charters",
-					href: "/",
+					href: "/fishing-charters",
 				},
 			],
 		},
@@ -41,12 +42,8 @@ export const siteConfig = {
 			href: null,
 			subItems: [
 				{
-					label: "Yachts",
-					href: "/",
-				},
-				{
-					label: "Fishing charters",
-					href: "/",
+					label: "What to expect",
+					href: "/what-to-expect",
 				},
 			],
 		},
@@ -55,30 +52,36 @@ export const siteConfig = {
 			href: null,
 			subItems: [
 				{
-					label: "Yachts",
-					href: "/",
+					label: "Best Fishing Months Cabo",
+					href: "/best-fishing-months-cabo",
 				},
 				{
-					label: "Fishing charters",
-					href: "/",
+					label: "Cabo San Lucas Fishing Tournament Schedule",
+					href: "/cabo-san-lucas-fishing-tournament-schedule",
 				},
-			],
+			]
 		},
 		{
 			label: "Contact Us",
 			href: "/contact-us",
+			subItems: [
+				{
+					label: "Our Location",
+					href: "/our-location",
+				},
+				{
+					label: "Check Boat Availability",
+					href: "/check-boat-availability",
+				},
+			],
 		},
 		{
 			label: "FAQ",
 			href: "/contact-us",
 			subItems: [
 				{
-					label: "Yachts",
-					href: "/",
-				},
-				{
-					label: "Fishing charters",
-					href: "/",
+					label: "Make a payment",
+					href: "/make-a-payment",
 				},
 			],
 		},
@@ -139,30 +142,36 @@ export const siteConfig = {
 			href: null,
 			subItems: [
 				{
-					label: "Yachts",
+					label: "Best Fishing Months Cabo",
 					href: "/",
 				},
 				{
-					label: "Fishing charters",
+					label: "Cabo San Lucas Fishing Tournament Schedule",
 					href: "/",
 				},
-			],
+			]
 		},
 		{
 			label: "Contact Us",
 			href: "/contact-us",
+			subItems: [
+				{
+					label: "Our Location",
+					href: "/our-location",
+				},
+				{
+					label: "Check Boat Availability",
+					href: "/check-boat-availability",
+				},
+			],
 		},
 		{
 			label: "FAQ",
 			href: "/contact-us",
 			subItems: [
 				{
-					label: "Yachts",
-					href: "/",
-				},
-				{
-					label: "Fishing charters",
-					href: "/",
+					label: "Make a payment",
+					href: "/make-a-payment",
 				},
 			],
 		},
@@ -174,8 +183,6 @@ export const siteConfig = {
 	links: {
 		github: "https://github.com/nextui-org/nextui",
 		twitter: "https://twitter.com/getnextui",
-		docs: "https://nextui.org",
-		discord: "https://discord.gg/9b6yyZKmH4",
-		sponsor: "https://patreon.com/jrgarciadev"
+		facebook: "https://facebook.com/",
 	},
 };

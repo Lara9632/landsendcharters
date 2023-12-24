@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+  --fa-border-color: #eee;
+  --fa-border-radius: 50%;
+  --fa-primary-color: #008DCE;
+  --fa-secondary-color: #eee;
+}
+
+.fa-brands{
+  color: var(--fa-primary-color);
+  border-radius: 50%;
+}
