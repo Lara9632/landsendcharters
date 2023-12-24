@@ -96,30 +96,16 @@ export const siteConfig = {
 			href: "/",
 		},
 		{
-			label: "About Us",
-			href: "/about",
-			subItems: [
-				{
-					label: "Yachts",
-					href: "/",
-				},
-				{
-					label: "Fishing charters",
-					href: "/",
-				},
-			],
-		},
-		{
 			label: "Our Fleet",
-			href: "/docs",
+			href: "/",
 			subItems: [
 				{
 					label: "Yachts",
-					href: "/",
+					href: "/yachts",
 				},
 				{
 					label: "Fishing charters",
-					href: "/",
+					href: "/fishing-charters",
 				},
 			],
 		},
@@ -128,12 +114,8 @@ export const siteConfig = {
 			href: null,
 			subItems: [
 				{
-					label: "Yachts",
-					href: "/",
-				},
-				{
-					label: "Fishing charters",
-					href: "/",
+					label: "What to expect",
+					href: "/what-to-expect",
 				},
 			],
 		},
@@ -143,11 +125,11 @@ export const siteConfig = {
 			subItems: [
 				{
 					label: "Best Fishing Months Cabo",
-					href: "/",
+					href: "/best-fishing-months-cabo",
 				},
 				{
 					label: "Cabo San Lucas Fishing Tournament Schedule",
-					href: "/",
+					href: "/cabo-san-lucas-fishing-tournament-schedule",
 				},
 			]
 		},
@@ -185,5 +167,13 @@ export const siteConfig = {
 		facebook: "https://www.facebook.com/landsendcharters/",
 		youtube: "https://www.youtube.com/channel/UCjVvg5iFlZOA1S-78GqRQKg",
 		instagram: "https://www.instagram.com/landsendcharters/",
+		makeAPayment: "/make-a-payment",
+		contactUs: "/contact-us",
+		ourLocation: "/our-location",
+		checkBoatAvailability: "/check-boat-availability",
+		yachts: "/yachts",
+		fishingCharters: "/fishing-charters",
+		whatToExpect: "/what-to-expect",
+		faq: "/faq",
 	},
 };
