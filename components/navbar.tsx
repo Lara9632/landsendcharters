@@ -12,7 +12,7 @@ import {
   NavbarMenuItem
 } from '@nextui-org/navbar';
 import { DropdownItem, DropdownTrigger, Dropdown, DropdownMenu } from '@nextui-org/react';
-import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from './jsx-icons';
+import { ChevronDown } from './jsx-icons';
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import { siteConfig } from '@/config/site';
@@ -41,15 +41,7 @@ export const Navbar = () => {
     setDropdownStates(prev => ({ ...prev, [itemId]: false }));
   };
   const icons = {
-    chevron: <ChevronDown fill="currentColor" size={16} height={undefined} width={undefined} />,
-    scale: <Scale className="text-warning" fill="currentColor" size={30} height={undefined} width={undefined} />,
-    lock: <Lock className="text-success" fill="currentColor" size={30} height={undefined} width={undefined} />,
-    activity: (
-      <Activity className="text-secondary" fill="currentColor" size={30} height={undefined} width={undefined} />
-    ),
-    flash: <Flash className="text-primary" fill="currentColor" size={30} height={undefined} width={undefined} />,
-    server: <Server className="text-success" fill="currentColor" size={30} height={undefined} width={undefined} />,
-    user: <TagUser className="text-danger" fill="currentColor" size={30} height={undefined} width={undefined} />
+    chevron: <ChevronDown fill="currentColor" size={16} height={undefined} width={undefined} />
   };
 
   return (
