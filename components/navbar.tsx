@@ -176,7 +176,7 @@ export const Navbar = () => {
                     </DropdownMenu>
                   </Dropdown>
                 ) : (
-                  <NavbarItem key={item.href}>
+                  <NavbarItem key={item.href} isActive={item.href === '/' ? true : false}>
                     <NextLink
                       className="data-[active=true]:text-white data-[active=true]:bg-[#4054b2] hover:bg-[#4054b2] hover:text-white font-semibold uppercase text-[22.5px] min-w-0] py-2 p-2 rounded-md"
                       color="foreground"

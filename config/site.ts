@@ -181,7 +181,7 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		twitter: "https://twitter.com/landsendcharters",
+		twitter: "#",
 		facebook: "https://www.facebook.com/landsendcharters/",
 		youtube: "https://www.youtube.com/channel/UCjVvg5iFlZOA1S-78GqRQKg",
 		instagram: "https://www.instagram.com/landsendcharters/",
