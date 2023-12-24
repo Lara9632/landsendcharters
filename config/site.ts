@@ -181,8 +181,9 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		github: "https://github.com/nextui-org/nextui",
-		twitter: "https://twitter.com/getnextui",
-		facebook: "https://facebook.com/",
+		twitter: "https://twitter.com/landsendcharters",
+		facebook: "https://www.facebook.com/landsendcharters/",
+		youtube: "https://www.youtube.com/channel/UCjVvg5iFlZOA1S-78GqRQKg",
+		instagram: "https://www.instagram.com/landsendcharters/",
 	},
 };
