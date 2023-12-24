@@ -20,13 +20,7 @@ import NextLink from 'next/link';
 import { ThemeSwitch } from '@/components/theme-switch';
 import Image from 'next/image';
 import { saira } from '@/config/fonts';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faFacebookSquare,
-  faSquareXTwitter,
-  faYoutubeSquare,
-  faInstagramSquare
-} from '@fortawesome/free-brands-svg-icons';
+import { SocialMediaIcons } from '@/components/SocialMediaIcons';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,22 +48,11 @@ export const Navbar = () => {
           </NextLink>
         </div>
         <div className="flex gap-2">
-          <Link isExternal href={siteConfig.links.facebook} aria-label="Facebook">
-            <FontAwesomeIcon icon={faFacebookSquare} className="fa-brands text-2xl" />
-          </Link>
-          <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
-            <FontAwesomeIcon icon={faSquareXTwitter} className="fa-brands text-2xl" />
-          </Link>
-          <Link isExternal href={siteConfig.links.youtube} aria-label="Youtube">
-            <FontAwesomeIcon icon={faYoutubeSquare} className="fa-brands text-2xl" />
-          </Link>
-          <Link isExternal href={siteConfig.links.instagram} aria-label="Instagram">
-            <FontAwesomeIcon icon={faInstagramSquare} className="fa-brands text-2xl" />
-          </Link>
+          <SocialMediaIcons className={`text-[#008DCE] text-2xl`} />
         </div>
       </div>
       <NextUINavbar
-        position="sticky"
+        shouldHideOnScroll
         height={'auto'}
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
@@ -116,18 +99,7 @@ export const Navbar = () => {
               </NextLink>
             </NavbarItem>
             <NavbarItem className="gap-2 items-center mr-2">
-              <Link isExternal href={siteConfig.links.facebook} aria-label="Facebook">
-                <FontAwesomeIcon icon={faFacebookSquare} className="fa-brands text-2xl" />
-              </Link>
-              <Link isExternal href={siteConfig.links.twitter} aria-label="Twitter">
-                <FontAwesomeIcon icon={faSquareXTwitter} className="fa-brands text-2xl" />
-              </Link>
-              <Link isExternal href={siteConfig.links.youtube} aria-label="Youtube">
-                <FontAwesomeIcon icon={faYoutubeSquare} className="fa-brands text-2xl" />
-              </Link>
-              <Link isExternal href={siteConfig.links.instagram} aria-label="Instagram">
-                <FontAwesomeIcon icon={faInstagramSquare} className="fa-brands text-2xl" />
-              </Link>
+              <SocialMediaIcons className={`text-[#008DCE] text-2xl`} />
               {/* <ThemeSwitch /> */}
             </NavbarItem>
           </NavbarContent>
